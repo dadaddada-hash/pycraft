@@ -1,23 +1,29 @@
-#import libarys
+import sys
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
-#create an instance of the ursina app
+# Create an instance of the ursina app
 app = Ursina()
 
-#create player
+# Create player
 player = FirstPersonController(
-    mouse_sensitivity=Vec2(100, 100)
+    mouse_sensitivity=Vec2(100, 100),
+    position=(0, 10, 0)
 )
 
-#create the ground
+# Load texture
+block_textures = {
+    "grass": load_texture("Assets/Textures/groundEarth.png")
+}
+
+# Create the ground
 ground = Entity(
     model="plane",
     scale=(100, 1, 100),
-    Texture="grass",
-    texture_scale=(10, 10),
-    Collider="true"
+    texture=block_textures["grass"],
+    texture_scale=(100, 100),
+    collider="box"
 )
 
-#run the app
+# Run the app
 app.run()
