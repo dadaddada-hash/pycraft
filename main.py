@@ -13,6 +13,9 @@ player = FirstPersonController(
 
 # Load texture
 block_textures = {
+    "stone": load_texture("Assets\Textures\Stone01.png"),
+    "dirt": load_texture("Assets\Textures\groundMud.png"),
+    "bedrock": load_texture(""),
     "grass": load_texture("Assets/Textures/groundEarth.png")
 }
 
